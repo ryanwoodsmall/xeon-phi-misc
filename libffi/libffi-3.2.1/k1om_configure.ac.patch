@@ -1,0 +1,11 @@
+--- a/configure.ac	2014-11-12 11:56:51.000000000 +0000
++++ b/configure.ac	2016-05-26 04:06:16.275039614 +0000
+@@ -173,7 +173,7 @@
+ 	fi
+ 	;;
+ 
+-  i?86-*-* | x86_64-*-*)
++  i?86-*-* | x86_64-*-* | k1om-*-*)
+ 	TARGETDIR=x86
+ 	if test $ac_cv_sizeof_size_t = 4; then
+ 	  case "$host" in

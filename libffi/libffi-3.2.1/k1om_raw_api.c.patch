@@ -1,0 +1,52 @@
+--- a/src/raw_api.c	2014-11-08 12:47:24.000000000 +0000
++++ b/src/raw_api.c	2016-05-26 04:32:00.155239363 +0000
+@@ -29,7 +29,7 @@
+ #include <ffi.h>
+ #include <ffi_common.h>
+ 
+-#if !FFI_NO_RAW_API
++//#if !FFI_NO_RAW_API
+ 
+ size_t
+ ffi_raw_size (ffi_cif *cif)
+@@ -191,7 +191,7 @@
+     }
+ }
+ 
+-#if !FFI_NATIVE_RAW_API
++//#if !FFI_NATIVE_RAW_API
+ 
+ 
+ /* This is a generic definition of ffi_raw_call, to be used if the
+@@ -208,7 +208,7 @@
+   ffi_call (cif, fn, rvalue, avalue);
+ }
+ 
+-#if FFI_CLOSURES		/* base system provides closures */
++//#if FFI_CLOSURES		/* base system provides closures */
+ 
+ static void
+ ffi_translate_args (ffi_cif *cif, void *rvalue,
+@@ -244,10 +244,10 @@
+   return status;
+ }
+ 
+-#endif /* FFI_CLOSURES */
+-#endif /* !FFI_NATIVE_RAW_API */
++//#endif /* FFI_CLOSURES */
++//#endif /* !FFI_NATIVE_RAW_API */
+ 
+-#if FFI_CLOSURES
++//#if FFI_CLOSURES
+ 
+ /* Again, here is the generic version of ffi_prep_raw_closure, which
+  * will install an intermediate "hub" for translation of arguments from
+@@ -262,6 +262,6 @@
+   return ffi_prep_raw_closure_loc (cl, cif, fun, user_data, cl);
+ }
+ 
+-#endif /* FFI_CLOSURES */
++//#endif /* FFI_CLOSURES */
+ 
+-#endif /* !FFI_NO_RAW_API */
++//#endif /* !FFI_NO_RAW_API */
